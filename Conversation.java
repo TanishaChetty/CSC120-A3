@@ -5,8 +5,8 @@ import java.util.ArrayList;
 class Conversation implements Chatbot {
 
   // Attributes 
-  // String[] responses = {"Awesome.", "Epic!", "I'm so sorry", "Fuckkk man", "Cool", 
-  // "Goated","You're being really weird right now", "Oh my god you can't say that"};
+  static String[] responses = { "Awesome.", "Epic!", "I'm so sorry", "Eek!", "Cool", 
+  "Goated","You're being really weird right now", "Oh my god you can't say that"};
 
   /**
    * Constructor 
@@ -21,7 +21,7 @@ class Conversation implements Chatbot {
   public void chat() {
     Scanner input = new Scanner (System.in);
     String response;
-    Random random_int = new Random();
+    //Random random_int = new Random();
     ArrayList <String> transcript = new ArrayList<>();
 
     // starts the conversation
@@ -38,14 +38,6 @@ class Conversation implements Chatbot {
     for(int i = 0; i < rounds; i++){
       response = input.nextLine();
       transcript.add(response);
-      // String chatResponse = mirrorResponse(response);
-
-      // if (chatResponse.equals(response)){
-      //   System.out.println(responses[random_int.nextInt(0, (responses.length)-1)]);
-      // }
-      // else {
-      //   System.out.println(chatResponse);
-      // }
       System.out.println(mirrorResponse(response));
       transcript.add(mirrorResponse(response));
     
@@ -58,7 +50,7 @@ class Conversation implements Chatbot {
     for (String message: transcript){
       System.out.println(message);
     }
-
+  input.close();
   }
 public static String mirrorResponse(String input) {
   // creating array for mirrored words
@@ -78,8 +70,7 @@ public static String mirrorResponse(String input) {
     }
   }
 
-  String[] responses = {"Awesome.", "Epic!", "I'm so sorry", "Fuckkk man", "Cool", 
-  "Goated","You're being really weird right now", "Oh my god you can't say that"};
+
 
   Random random_int = new Random();
 
@@ -95,9 +86,8 @@ public static String mirrorResponse(String input) {
       sentence = sentence.substring(0, 1).toUpperCase() +sentence.substring(1);
     } 
       return sentence;
-    }
-    else {
-      return responses[random_int.nextInt(0, (responses.length)-1)];
+    } else {
+      return responses[random_int.nextInt(0, (responses.length))];
     }
   }
 
