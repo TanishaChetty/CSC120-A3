@@ -55,7 +55,7 @@ class Conversation implements Chatbot {
 public static String mirrorResponse(String input) {
   // creating array for mirrored words
   String[][] mirror_pairs = {
-    {"I", "you"}, {"me", "you"}, {"am", "are"}, {"you", "I"}, {"my", "you"}, {"your", "my"},{"are", "am"},
+    {"I", "you"}, {"me", "you"}, {"am", "are"}, {"you", "I"}, {"my", "you"}, {"your", "my"},{"are", "am"}, {"Do you", "Do I"}, {"me?", "you?"}
   }; 
   String[] split_words = input.split(" ");
   boolean check_mirror = false;
